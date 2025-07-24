@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-brown: #d87d4a;
+  --color-light-brown: #fbaf85;
+  --color-dark-950: #000000;
+  --color-dark-900: #101010;
+  --color-light-gray: #f1f1f1;
+  --color-lighter-gray: #fafafa;
+  --color-white: #ffffff;
+
+  --font-manrope: "Manrope", sans-serif;
+}
+
+.h1 {
+  font-family: var(--font-manrope);
+  font-size: 3.5rem; /*56px*/
+  line-height: 3.625rem; /*58px*/
+  font-weight: bold;
+  letter-spacing: 0.12rem; /*2px*/
+}
+
+.h2 {
+  font-family: var(--font-manrope);
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.h3 {
+  font-family: var(--font-manrope);
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: bold;
+  letter-spacing: 1.15px;
+}
+
+.h4 {
+  font-family: var(--font-manrope);
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.h5 {
+  font-family: var(--font-manrope);
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: bold;
+  letter-spacing: 1.7px;
+}
+
+.h6 {
+  font-family: var(--font-manrope);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+
+.p {
+  font-family: var(--font-manrope);
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0;
+  font-weight: normal;
+}
+
+.btn-fs {
+  font-family: var(--font-manrope);
+  font-weight: bold;
+  font-size: 13px;
+  line-height: auto;
+  letter-spacing: 1px;
+}
+.li {
+  font-family: var(--font-manrope);
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
