@@ -1,0 +1,91 @@
+import { Link, NavLink } from "react-router-dom";
+function Footer() {
+  return (
+    <footer className="bg-dark-900">
+      <div className="bg-dark-900 max-w-[80rem] mx-auto px-6  xl:px-40 pt-[75px] pb-[48px]">
+        <div className=" lg:flex  justify-between items-center flex-1 pb-[2.87rem] ">
+          <div className="w-[143px] h-[25px] mx-auto md:mx-0 ">
+            <Link to="/">
+              <img
+                src="/assets/shared/desktop/logo.svg"
+                alt="audiophile"
+                className="w-full"
+              />
+            </Link>
+          </div>
+          <ul className="flex flex-col md:flex-row items-center gap-[2.125rem] mt-12 lg:mt-0">
+            <li>
+              <NavLink
+                className="text-white font-manrope font-bold text-sm leading-[1.5625] tracking-[0.125rem]"
+                to="/"
+              >
+                HOME
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="text-white font-manrope font-bold text-sm leading-[1.5625] tracking-[0.125]"
+                to="/headphones/headphones"
+              >
+                HEADPHONES
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="text-white font-manrope font-bold text-sm leading-[1.5625] tracking-[0.125]"
+                to="/speakers/speakers"
+              >
+                SPEAKERS
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="text-white font-manrope font-bold text-sm leading-[1.5625] tracking-[0.125]"
+                to="/earphones/earphones"
+              >
+                EARPHONES
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="lg:flex justify-between items-center">
+          <div className="xl:max-w-[500px] lg:max-w-[398px]">
+            <p className="text-white text-base leading-[1.5625rem] tracking-0 text-center md:text-left">
+              Audiophile is an all in one stop to fulfill your audio needs.
+              We're a small team of music lovers and sound specialists who are
+              devoted to helping you get the most out of personal audio. Come
+              and visit our demo facility - we’re open 7 days a week.
+            </p>
+            <p className="text-white text-base mt-[56px] leading-[1.5625rem] tracking-0 text-center md:text-left">
+              Copyright 2021. All Rights Reserved
+            </p>
+          </div>
+          <div className="flex items-center justify-center md:justify-start   gap-4 mt-12 lg:mt-0">
+            <div className="w-[24px] h-[24px] cursor-pointer">
+              <img
+                src="\assets\shared\desktop\icon-facebook.svg"
+                alt="facebook"
+                className="w-full"
+              />
+            </div>
+            <div className="w-[24px] h-[24px] cursor-pointer">
+              <img
+                src="\assets\shared\desktop\icon-twitter.svg"
+                alt="twitter"
+                className="w-full"
+              />
+            </div>
+            <div className="w-[24px] h-[24px] cursor-pointer">
+              <img
+                src="\assets\shared\desktop\icon-instagram.svg"
+                alt="instagram"
+                className="w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+export default Footer;
