@@ -14,7 +14,7 @@ function Earphones() {
     <>
       <div className="bg-dark-900">
         <Navbar />
-        <div className="max-w-[80rem] mx-auto bg-dark-900">
+        <div className="max-w-[80rem] mx-auto bg-dark-900 ">
           <div className="bg-dark-900 py-8 md:py-24 ">
             <h2 className="font-manrope font-bold text-2xl md:text-6xl text-center tracking-[2px] md:tracking-[1.43px] md:leading-11 text-white">
               EARPHONES
@@ -23,13 +23,13 @@ function Earphones() {
         </div>
       </div>
 
-      <div className="bg-white pt-16">
+      <div className="bg-white ">
         <div className="max-w-[80rem] mx-auto px-6  xl:px-40">
           {categories.map((product) => {
             return (
               <div
                 key={product.id}
-                className="lg:grid grid-cols-2 gap-31 items-center"
+                className="lg:grid grid-cols-2 gap-31 items-center mt-16"
               >
                 <div className="mx-auto lg:mx-0">
                   <img

@@ -11,7 +11,7 @@ function Headphones() {
   const categories = data.filter((data) => data.category === id);
   return (
     <>
-      <div className="bg-dark-900">
+      <div className="bg-dark-900 ">
         <Navbar />
         <div className="max-w-[80rem] mx-auto bg-dark-900">
           <div className="bg-dark-900 py-8 md:py-24 ">

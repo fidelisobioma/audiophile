@@ -1,4 +1,9 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useParams,
+  useNavigate,
+  useOutletContext,
+} from "react-router-dom";
 import data from "../data.json";
 import Navbar from "./shared/Navbar";
 import Categories from "./shared/Categories";
@@ -9,9 +14,18 @@ function Productdetail() {
   const params = useParams();
   const navigate = useNavigate();
   const { slug } = params;
+
+  const { cart, setCart } = useOutletContext();
+
   const productDetail = data.filter((productName) => productName.slug === slug);
-  // productDetail.map((product) => console.log(product));
-  // console.log(productDetail);
+  let productId = productDetail.map((itemId) => itemId.id);
+  let cartId = cart.map((itemId) => itemId.id);
+
+  const handleAddToCart = () => {
+    if (!cartId.includes(productId[0])) {
+      setCart([...cart, productDetail[0]]);
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -67,7 +81,10 @@ function Productdetail() {
                           </div>
                         </div>
                         <div className="shrink-0">
-                          <button className=" bg-brown text-white font-manrope font-bold text-sm p-4 rounded tracking-[1px] cursor-pointer">
+                          <button
+                            onClick={handleAddToCart}
+                            className=" bg-brown text-white font-manrope font-bold text-sm p-4 rounded tracking-[1px] cursor-pointer"
+                          >
                             ADD TO CART
                           </button>
                         </div>
@@ -132,7 +149,6 @@ function Productdetail() {
                       YOU MAY ALSO LIKE
                     </h2>
                     <div className="mt-10 md:grid grid-cols-3 gap-3">
-                      {product.others.map((other) => console.log(other))}
                       {product.others.map((other, index) => (
                         <div key={index} className="text-center">
                           <img

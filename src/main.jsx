@@ -8,6 +8,7 @@ import Headphones from "./components/Headphones.jsx";
 import Speakers from "./components/Speakers.jsx";
 import Earphones from "./components/Earphones.jsx";
 import Productdetail from "./components/productdetail.jsx";
+import Checkout from "./components/Checkout.jsx";
 
 // import Navbar from "./components/Navbar.jsx";
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/speakers/:id", element: <Speakers /> },
       { path: "/earphones/:id", element: <Earphones /> },
       { path: "/productdetail/:slug", element: <Productdetail /> },
+      { path: "/checkout", element: <Checkout /> },
     ],
   },
 ]);
