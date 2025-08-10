@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link, NavLink, useOutletContext } from "react-router-dom";
 function Navbar() {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, totalQuantity, totalPrice } = useOutletContext();
 
   //Add mobile navbar
   const [navbar, setNavbar] = useState(false);
   const handleclickNavbar = () => {
+    setOverLay(false);
     setNavbar(!navbar);
   };
 
   //Add cart
   const [overLay, setOverLay] = useState(false);
   const handleShowCart = () => {
+    setNavbar(false);
     setOverLay(!overLay);
   };
 
@@ -32,17 +34,7 @@ function Navbar() {
         .filter((items) => items.quantity !== 0),
     );
   };
-  //total items in the cart
-  const totalQuantity = cart.reduce((total, item) => {
-    return total + item.quantity;
-  }, 0);
 
-  console.log(totalQuantity);
-
-  //total price of items in the cart
-  const totalPrice = cart.reduce((total, item) => {
-    return total + item.quantity * item.price;
-  }, 0);
   return (
     <div className=" bg-dark-900 ">
       <nav className="fixed z-50 bg-dark-900 max-w-[80rem] px-16 xl:px-40 mx-auto hidden lg:flex flex-col justify-between w-full overflow-hidden  top-0 left-0 right-0  ">
@@ -146,13 +138,10 @@ function Navbar() {
           </div>
         </div>
         {navbar && (
-          <div className="bg-dark-900 h-full z-50 absolute top-0 left-0 right-0">
-            <div
-              onClick={handleclickNavbar}
-              className="max-w-[80rem] mx-auto px-6  bg-white py-8 rounded-b-lg"
-            >
-              <div className="grid gap-17 md:grid-cols-3 md:gap-2.5 lg:gap-7.5 ">
-                <div className="bg-light-gray rounded-md">
+          <div className="bg-[rgba(0,0,0,0.7)] z-10 fixed h-[calc(100vh-90px)] top-[90px p-6  left-0 right-0">
+            <div className="max-w-[80rem] mx-auto px-6  bg-white py-8 z-50 rounded-lg">
+              <div className="grid gap-12 md:grid-cols-3 md:gap-2.5 lg:gap-7.5 ">
+                <div className="bg-light-gray rounded-md ">
                   <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
                     <img
                       src="\assets\shared\desktop\image-category-thumbnail-headphones.png"
@@ -182,7 +171,7 @@ function Navbar() {
                   </div>
                 </div>
 
-                <div className="bg-light-gray rounded-md">
+                <div className="bg-light-gray rounded-md ">
                   <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
                     <img
                       src="\assets\shared\desktop\image-category-thumbnail-speakers.png"
@@ -190,7 +179,7 @@ function Navbar() {
                       className="w-full"
                     />
                   </div>
-                  <div className="text-center mt-8 md:mt-1">
+                  <div className="text-center mt-6 md:mt-1">
                     <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
                       SPEAKERS
                     </h3>
@@ -211,7 +200,8 @@ function Navbar() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-light-gray rounded-md">
+
+                <div className="bg-light-gray rounded-md ">
                   <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6 lg:-mt-8 mx-auto ">
                     <img
                       src="\assets\shared\desktop\image-category-thumbnail-earphones.png"
@@ -332,15 +322,14 @@ function Navbar() {
                   </h3>
                 </div>
               </div>
-
-              <div className="bg-brown text-center rounded p-3 mt-6  hover:bg-light-brown focus:bg-light-brown transition">
-                <Link
-                  to=""
-                  className="text-white text-sm font-bold font-manrope tracking-[0.06rem]"
+              <Link to="/checkout" className="">
+                <button
+                  onClick={handleShowCart}
+                  className="bg-brown text-center rounded w-full p-3 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
                 >
                   CHECKOUT
-                </Link>
-              </div>
+                </button>
+              </Link>
             </div>
           )}
         </div>

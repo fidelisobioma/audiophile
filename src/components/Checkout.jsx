@@ -10,7 +10,7 @@ function Checkout() {
     setConfirm(!confirm);
   };
 
-  // const { cart, totalPrice } = useOutletContext();
+  const { cart, totalPrice } = useOutletContext();
 
   let shippingFee = 50;
 
@@ -70,15 +70,18 @@ function Checkout() {
                         GRAND TOTAL
                       </h3>
                       <h3 className="text-white font-manrope font-bold text-lg mt-2">
-                        {/* {Math.floor(totalPrice * 0.2) +
+                        ${" "}
+                        {(
+                          Math.floor(totalPrice * 0.2) +
                           shippingFee +
-                          totalPrice} */}
+                          totalPrice
+                        ).toLocaleString()}
                       </h3>
                     </div>
                   </div>
                 </div>
                 <Link to="/">
-                  <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] cursor-pointer">
+                  <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] rounded cursor-pointer">
                     BACK TO HOME
                   </button>
                 </Link>
@@ -317,7 +320,7 @@ function Checkout() {
                     Total
                   </h3>
                   <h3 className="font-manrope font-bold text-lg text-dark-900 ">
-                    {/* $ {totalPrice} */}
+                    $ {totalPrice.toLocaleString()}
                   </h3>
                 </div>
                 <div className="flex justify-between mt-2">
@@ -334,7 +337,7 @@ function Checkout() {
                     VAT (INCLUDED)
                   </h3>
                   <h3 className="font-manrope font-bold text-lg text-dark-900  ">
-                    $ {Math.floor(totalPrice * 0.2)}
+                    $ {Math.floor(totalPrice * 0.2).toLocaleString()}
                   </h3>
                 </div>
 
@@ -343,7 +346,12 @@ function Checkout() {
                     GRAND TOTAL
                   </h3>
                   <h3 className="font-manrope font-bold text-lg text-brown  ">
-                    {/* $ {Math.floor(totalPrice * 0.2) + shippingFee + totalPrice} */}
+                    ${" "}
+                    {(
+                      Math.floor(totalPrice * 0.2) +
+                      shippingFee +
+                      totalPrice
+                    ).toLocaleString()}
                   </h3>
                 </div>
               </div>
@@ -351,7 +359,7 @@ function Checkout() {
               <div className="mt-6">
                 <button
                   onClick={handleclickConfirm}
-                  className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-4 px-9 tracking-[1px] cursor-pointer"
+                  className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-4 px-9 tracking-[1px] rounded cursor-pointer"
                 >
                   CONTINUE & PAY
                 </button>
