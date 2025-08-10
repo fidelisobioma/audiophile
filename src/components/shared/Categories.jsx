@@ -18,18 +18,15 @@ function Categories() {
                   HEADPHONES
                 </h3>
                 <div>
-                  <NavLink
-                    className="space-x-1 inline-flex justify-center items-center my-4"
-                    to="/headphones/headphones"
-                  >
-                    <span className="font-manrope font-bold text-sm text-gray-600">
+                  <NavLink className="" to="/headphones/headphones">
+                    <span className=" my-4  gap-1 inline-flex justify-center items-center font-manrope font-bold text-sm text-gray-600 hover:text-light-brown focus:text-light-brown  transition">
                       SHOP
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
                     </span>
-                    <img
-                      src="\assets\shared\desktop\icon-arrow-right.svg"
-                      alt="arrow right"
-                      className=""
-                    />
                   </NavLink>
                 </div>
               </div>
@@ -48,18 +45,15 @@ function Categories() {
                   SPEAKERS
                 </h3>
                 <div>
-                  <NavLink
-                    className="space-x-1 inline-flex justify-center items-center my-4"
-                    to="/speakers/speakers"
-                  >
-                    <span className="font-manrope font-bold text-sm text-gray-600">
+                  <NavLink to="/speakers/speakers">
+                    <span className="my-4 gap-1 inline-flex justify-center items-center font-manrope font-bold text-sm text-gray-600 hover:text-light-brown focus:text-light-brown transition">
                       SHOP
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
                     </span>
-                    <img
-                      src="\assets\shared\desktop\icon-arrow-right.svg"
-                      alt="arrow right"
-                      className=""
-                    />
                   </NavLink>
                 </div>
               </div>
@@ -78,18 +72,15 @@ function Categories() {
                 </h3>
 
                 <div>
-                  <NavLink
-                    className="space-x-1 inline-flex justify-center items-center my-4"
-                    to="/earphones/earphones"
-                  >
-                    <span className="font-manrope font-bold text-sm text-gray-600">
+                  <NavLink to="/earphones/earphones">
+                    <span className="gap-1 inline-flex justify-center items-center my-4 font-manrope font-bold text-sm text-gray-600 hover:text-light-brown focus:text-light-brown transition">
                       SHOP
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
                     </span>
-                    <img
-                      src="\assets\shared\desktop\icon-arrow-right.svg"
-                      alt="arrow right"
-                      className=""
-                    />
                   </NavLink>
                 </div>
               </div>

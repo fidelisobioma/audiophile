@@ -13,7 +13,7 @@ function Headphones() {
     <>
       <div className="bg-dark-900 ">
         <Navbar />
-        <div className="max-w-[80rem] mx-auto bg-dark-900">
+        <div className="max-w-[80rem] mx-auto bg-dark-900 mt-[90px] lg:mt-[117px]">
           <div className="bg-dark-900 py-8 md:py-24 ">
             <h2 className="font-manrope font-bold text-2xl md:text-6xl text-center tracking-[2px] md:tracking-[1.43px] md:leading-11 text-white">
               HEADPHONES
@@ -53,7 +53,7 @@ function Headphones() {
                   </p>
                   <div>
                     <Link to={`/productdetail/${product.slug}`}>
-                      <button className="bg-brown text-white text-center font-manrope font-semibold py-4 px-9 mt-6 rounded tracking-[1px] cursor-pointer">
+                      <button className="hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold py-4 px-9 mt-6 rounded tracking-[1px] cursor-pointer">
                         SEE PRODUCT
                       </button>
                     </Link>

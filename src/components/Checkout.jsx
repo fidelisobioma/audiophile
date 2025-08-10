@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import Navbar from "./shared/Navbar";
 import Footer from "./shared/Footer";
 import { useState } from "react";
@@ -9,10 +9,15 @@ function Checkout() {
   const handleclickConfirm = () => {
     setConfirm(!confirm);
   };
+
+  // const { cart, totalPrice } = useOutletContext();
+
+  let shippingFee = 50;
+
   return (
     <div className="relative ">
       <Navbar />
-      <div className="bg-[#f2f2f2]">
+      <div className="bg-[#f2f2f2] mt-[90px] lg:mt-[117px]">
         <div className="max-w-[80rem] mx-auto px-6 xl:px-40 bg-[#f2f2f2] pb-8 ">
           {confirm && (
             <div className="bg-[rgba(0,0,0,0.5)] z-50 fixed grid items-center left-0 right-0 top-0 h-full px-6 ">
@@ -35,40 +40,45 @@ function Checkout() {
                     <div className="flex gap-4 mb-3">
                       <div className="w-[64px] h-[64px]">
                         <img
-                          src="\assets\product-xx99-mark-two-headphones\mobile\image-product.jpg"
-                          alt="headphone"
+                          src={cart[0].image.mobile}
+                          alt={cart[0].name}
                           className="rounded-lg w-full"
                         />
                       </div>
 
                       <div className="flex-1">
                         <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
-                          XX9
+                          {cart[0].name}
                         </h2>
                         <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
-                          $559
+                          ${cart[0].price}
                         </p>
                       </div>
                       <p className="font-manrope font-bold text-sm text-gray-500">
-                        x1
+                        x{cart[0].quantity}
                       </p>
                     </div>
+
                     <hr className="text-[#979797]" />
                     <p className="font-manrope font-bold text-sm text-gray-500 tracking-tight text-center mt-3">
-                      and 2 other item(s)
+                      {` and ${cart.length - 1} other item(s)`}
                     </p>
                   </div>
-                  <div className="bg-dark-900 p-6">
-                    <h3 className="font-manrope text-sm text-light-gray">
-                      GRAND TOTAL
-                    </h3>
-                    <h3 className="text-white font-manrope font-bold text-lg mt-2">
-                      $ 5,446
-                    </h3>
+                  <div className="bg-dark-900 p-6 grid items-end">
+                    <div>
+                      <h3 className="font-manrope text-sm text-light-gray">
+                        GRAND TOTAL
+                      </h3>
+                      <h3 className="text-white font-manrope font-bold text-lg mt-2">
+                        {/* {Math.floor(totalPrice * 0.2) +
+                          shippingFee +
+                          totalPrice} */}
+                      </h3>
+                    </div>
                   </div>
                 </div>
                 <Link to="/">
-                  <button className="w-full bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] cursor-pointer">
+                  <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] cursor-pointer">
                     BACK TO HOME
                   </button>
                 </Link>
@@ -78,7 +88,7 @@ function Checkout() {
 
           <button
             onClick={() => navigate(-1)}
-            className="font-manrope font-semibold text-sm leading-6 mt-4 mb-6 cursor-pointer"
+            className="font-manrope font-semibold text-sm leading-6 mt-8 mb-6 cursor-pointer"
           >
             Go Back
           </button>
@@ -106,7 +116,7 @@ function Checkout() {
                           type="text"
                           id="name"
                           placeholder="Alexei Ward"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-0">
@@ -121,7 +131,7 @@ function Checkout() {
                           type="email"
                           id="email"
                           placeholder="alexei@mail.com"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-0">
@@ -136,7 +146,7 @@ function Checkout() {
                           type="tel"
                           id="phone"
                           placeholder="+1 202-555-0136"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                     </div>
@@ -158,7 +168,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="1137 Williams Avenue"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-0 col-start-1 col-end-2">
@@ -172,7 +182,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="10001"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-0 col-start-2 col-end-4">
@@ -186,7 +196,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="New York"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-0">
@@ -200,7 +210,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="United States"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                     </div>
@@ -215,7 +225,7 @@ function Checkout() {
                         Payment Method
                       </h3>
                       <div>
-                        <label className="flex gap-4 items-center mt-4 border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md">
+                        <label className="flex gap-4 items-center mt-4 border border-gray-400 hover:border-brown   text-manrope text-sm tracking-tight px-6 py-3 rounded-md">
                           <input
                             type="radio"
                             name="payment-method"
@@ -224,7 +234,7 @@ function Checkout() {
                           />
                           e-Money
                         </label>
-                        <label className="flex gap-4 items-center mt-6 border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md">
+                        <label className="flex gap-4 items-center mt-6 border border-gray-400 hover:border-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md">
                           <input
                             type="radio"
                             name="payment-method"
@@ -248,7 +258,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="238521993"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                       <div className="mt-6 md:mt-6">
@@ -262,7 +272,7 @@ function Checkout() {
                         <input
                           type="text"
                           placeholder="6891"
-                          className="w-full border border-gray-400 text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
+                          className="w-full border border-gray-400 focus:outline-brown  text-manrope text-sm tracking-tight px-6 py-3 rounded-md"
                         />
                       </div>
                     </div>
@@ -275,50 +285,31 @@ function Checkout() {
               <h2 className="uppercase font-manrope font-bold text-lg text-dark-900 tracking-[1.29px]">
                 Summary
               </h2>
+              {cart.map((items) => {
+                return (
+                  <div key={items.id} className="flex gap-4  mt-8 mb-6">
+                    <div className="w-[64px] h-[64px]">
+                      <img
+                        src={items.image.mobile}
+                        alt={items.name}
+                        className="rounded-lg w-full"
+                      />
+                    </div>
 
-              <div className="flex gap-4  mt-8 mb-6">
-                <div className="w-[64px] h-[64px]">
-                  <img
-                    src="\assets\product-xx99-mark-two-headphones\mobile\image-product.jpg"
-                    alt="headphone"
-                    className="rounded-lg w-full"
-                  />
-                </div>
-
-                <div className="flex-1">
-                  <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
-                    XX9
-                  </h2>
-                  <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
-                    $559
-                  </p>
-                </div>
-                <p className="font-manrope font-bold text-sm text-gray-500">
-                  x1
-                </p>
-              </div>
-
-              <div className="flex gap-4  mt-8 ">
-                <div className="w-[64px] h-[64px]">
-                  <img
-                    src="\assets\product-xx99-mark-two-headphones\mobile\image-product.jpg"
-                    alt="headphone"
-                    className="rounded-lg w-full"
-                  />
-                </div>
-
-                <div className="flex-1">
-                  <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
-                    XX9
-                  </h2>
-                  <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
-                    $559
-                  </p>
-                </div>
-                <p className="font-manrope font-bold text-sm text-gray-500">
-                  x1
-                </p>
-              </div>
+                    <div className="flex-1">
+                      <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
+                        {items.name}
+                      </h2>
+                      <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
+                        ${items.price}
+                      </p>
+                    </div>
+                    <p className="font-manrope font-bold text-sm text-gray-500">
+                      x{items.quantity}
+                    </p>
+                  </div>
+                );
+              })}
 
               <div className="mt-8">
                 <div className="flex justify-between">
@@ -326,7 +317,7 @@ function Checkout() {
                     Total
                   </h3>
                   <h3 className="font-manrope font-bold text-lg text-dark-900 ">
-                    $ 5,396
+                    {/* $ {totalPrice} */}
                   </h3>
                 </div>
                 <div className="flex justify-between mt-2">
@@ -334,7 +325,7 @@ function Checkout() {
                     SHIPPING
                   </h3>
                   <h3 className="font-manrope font-bold text-lg text-dark-900  ">
-                    $ 50
+                    $ {cart.length === 0 ? 0 : shippingFee}
                   </h3>
                 </div>
 
@@ -342,8 +333,17 @@ function Checkout() {
                   <h3 className="font-manrope font-semibold text-gray-500 text-sm leading-6">
                     VAT (INCLUDED)
                   </h3>
+                  <h3 className="font-manrope font-bold text-lg text-dark-900  ">
+                    $ {Math.floor(totalPrice * 0.2)}
+                  </h3>
+                </div>
+
+                <div className="flex justify-between mt-2">
+                  <h3 className="font-manrope font-semibold text-gray-500 text-sm leading-6">
+                    GRAND TOTAL
+                  </h3>
                   <h3 className="font-manrope font-bold text-lg text-brown  ">
-                    $ 5,446
+                    {/* $ {Math.floor(totalPrice * 0.2) + shippingFee + totalPrice} */}
                   </h3>
                 </div>
               </div>
@@ -351,7 +351,7 @@ function Checkout() {
               <div className="mt-6">
                 <button
                   onClick={handleclickConfirm}
-                  className="w-full bg-brown text-white text-center font-manrope text-sm font-semibold py-4 px-9 tracking-[1px] cursor-pointer"
+                  className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-4 px-9 tracking-[1px] cursor-pointer"
                 >
                   CONTINUE & PAY
                 </button>

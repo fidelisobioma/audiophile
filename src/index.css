@@ -62,12 +62,13 @@
   letter-spacing: 1.3px;
 }
 
-.p {
+.body-text {
   font-family: var(--font-manrope);
   font-size: 15px;
   line-height: 25px;
   letter-spacing: 0;
-  font-weight: normal;
+  opacity: 75%;
+  font-weight: 500;
 }
 
 .btn-fs {

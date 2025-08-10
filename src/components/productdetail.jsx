@@ -9,36 +9,70 @@ import Navbar from "./shared/Navbar";
 import Categories from "./shared/Categories";
 import Audiophile from "./shared/Audiophile";
 import Footer from "./shared/Footer";
+import { useState } from "react";
 
 function Productdetail() {
   const params = useParams();
   const navigate = useNavigate();
   const { slug } = params;
 
-  const { cart, setCart } = useOutletContext();
+  const { setCart } = useOutletContext();
 
   const productDetail = data.filter((productName) => productName.slug === slug);
-  let productId = productDetail.map((itemId) => itemId.id);
-  let cartId = cart.map((itemId) => itemId.id);
 
-  const handleAddToCart = () => {
-    if (!cartId.includes(productId[0])) {
-      setCart([...cart, productDetail[0]]);
-    }
+  const [product, setProduct] = useState(productDetail);
+  const increase = (id) => {
+    setProduct((prevP) =>
+      prevP.map((items) =>
+        items.id === id ? { ...items, quantity: items.quantity + 1 } : items,
+      ),
+    );
+  };
+  const decrease = (id) => {
+    setProduct((prevP) =>
+      prevP.map((items) =>
+        items.id === id
+          ? { ...items, quantity: Math.max(1, items.quantity - 1) }
+          : items,
+      ),
+    );
+  };
+
+  const addToCart = (newProduct) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find(
+        (items) => items.id === newProduct.id,
+      );
+      if (existingProduct) {
+        return prevCart.map((items) =>
+          items.id === newProduct.id
+            ? { ...items, quantity: items.quantity + newProduct.quantity }
+            : items,
+        );
+      } else {
+        return [...prevCart, newProduct];
+      }
+    });
+
+    setProduct((prev) =>
+      prev.map((items) =>
+        items.id === newProduct.id ? { ...items, quantity: 1 } : items,
+      ),
+    );
   };
   return (
     <div>
       <Navbar />
-      <div className="bg-white">
+      <div className="bg-white mt-[90px] lg:mt-[117px] ">
         <div className="max-w-[80rem] mx-auto px-6  xl:px-40">
           <button
             onClick={() => navigate(-1)}
-            className="font-manrope font-semibold text-sm leading-6 mt-4 cursor-pointer"
+            className="font-manrope font-semibold text-sm leading-6 mt-8 cursor-pointer"
           >
             Go Back
           </button>
           <div>
-            {productDetail.map((product) => {
+            {product.map((product) => {
               return (
                 <div key={product.id}>
                   <div className="mt-6 md:grid items-center grid-cols-2 gap-17 lg:gap-31">
@@ -70,19 +104,29 @@ function Productdetail() {
                         {product.description}
                       </p>
                       <p className="mt-6 font-manrope font-bold text-lg tracking-[1.29px]">
-                        ${product.price}
+                        ${product.price.toLocaleString()}
                       </p>
                       <div className="flex gap-4 mt-8">
                         <div>
                           <div className="flex items-center justify-center gap-4 w-[120px] bg-light-gray font-manrope font-bold text-sm p-4  rounded tracking-[1px] ">
-                            <button className="cursor-pointer">-</button>
-                            <p>1</p>
-                            <button className="cursor-pointer">+</button>
+                            <button
+                              onClick={() => decrease(product.id)}
+                              className="cursor-pointer hover:text-brown"
+                            >
+                              -
+                            </button>
+                            <p>{product.quantity}</p>
+                            <button
+                              onClick={() => increase(product.id)}
+                              className="cursor-pointer hover:text-brown"
+                            >
+                              +
+                            </button>
                           </div>
                         </div>
                         <div className="shrink-0">
                           <button
-                            onClick={handleAddToCart}
+                            onClick={() => addToCart(product)}
                             className=" bg-brown text-white font-manrope font-bold text-sm p-4 rounded tracking-[1px] cursor-pointer"
                           >
                             ADD TO CART

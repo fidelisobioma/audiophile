@@ -10,23 +10,23 @@ function Home() {
   const yx1 = "yx1-earphones";
   return (
     <div>
-      <div className="bg-dark-900">
+      <div className="bg-dark-900 ">
         <Navbar />
-        <div className="max-w-[80rem] mx-auto flex justify-center  lg:items-center bg-dark-900 bg-[url(/assets/home/mobile/headphone.png)] lg:bg-none bg-no-repeat bg-center bg-contain md:bg-auto min-h-[500px] md:min-h-[600px] lg:min-h-[700px]  w-full overflow-hidden px-6 xl:px-40">
-          <div className="max-w-[328px] md:max-w-[379px] text-center lg:text-left mt-[138px] lg:mt-[128px]">
-            <h1 className="text-light-gray text-center lg:text-left font-manrope font-normal text-base tracking-[10px]">
+        <div className="max-w-[80rem] mx-auto flex gap-[36px] justify-center mt-[90px] lg:mt-[117px]  bg-dark-900 bg-[url(/assets/home/mobile/headphone.png)] md:bg-[public/assets/home/tablet/image-header.jpg] lg:bg-none bg-no-repeat bg-center bg-contain md:bg-auto min-h-[510px] md:min-h-[600px] lg:min-h-[700px]  w-full overflow-hidden px-6 xl:px-40">
+          <div className=" max-w-[328px] md:max-w-[400px] text-center lg:text-left mt-[150px] md:mt-[180px] lg:mt-[128px]">
+            <h1 className="text-white opacity-[49.64%] text-center lg:text-left font-manrope font-[400px] text-[14px] tracking-[10px]">
               NEW PRODUCT
             </h1>
-            <h1 className="text-white text-center lg:text-left font-manrope font-bold text-4xl md:text-5xl tracking-[1.29px] md:tracking-[2px] my-4 uppercase">
+            <h1 className="text-white text-center lg:text-left font-manrope font-bold text-[2.25rem] md:text-[3.5rem] leading-[46px] md:leading-[58px] md:text-5xl tracking-[1.29px] md:tracking-[2px] mt-4 uppercase">
               XX99 Mark II HeadphoneS
             </h1>
-            <p className="text-light-gray text-center lg:text-left font-manrope text-base">
+            <p className="body-text text-white mt-6">
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
             <div>
               <Link to={`/productdetail/${xxmarktwo}`}>
-                <button className="bg-brown text-white text-center font-manrope font-semibold py-4 px-9 mt-6 rounded tracking-[1px] cursor-pointer">
+                <button className="bg-brown text-white text-center font-manrope font-semibold text-[13px] py-[0.9rem] px-[1.9rem] mt-7 rounded  tracking-[1px] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition">
                   SEE PRODUCT
                 </button>
               </Link>
@@ -66,7 +66,7 @@ function Home() {
               </p>
               <div>
                 <Link to={`/productdetail/${zx9}`}>
-                  <button className="bg-dark-900 text-white text-center font-manrope font-semibold py-4 px-9 mt-6 rounded tracking-[1px] cursor-pointer">
+                  <button className="bg-dark-900 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition text-white text-center font-manrope font-semibold py-4 px-9 mt-6 rounded tracking-[1px] cursor-pointer">
                     SEE PRODUCT
                   </button>
                 </Link>
@@ -85,7 +85,7 @@ function Home() {
               </h2>
               <div>
                 <Link to={`/productdetail/${zx7}`}>
-                  <button className="bg-transparent border border-dark-900 text-dark-900 text-center font-manrope font-semibold py-4 px-8 mt-6 rounded text-sm tracking-[1px] cursor-pointer">
+                  <button className="bg-transparent hover:bg-dark-900  focus:text-white transition focus:bg-dark-900 hover:text-white border border-dark-900 text-dark-900 text-center font-manrope font-semibold py-4 px-8 mt-6 rounded text-sm tracking-[1px] cursor-pointer">
                     SEE PRODUCT
                   </button>
                 </Link>
@@ -111,7 +111,7 @@ function Home() {
                   YX1 EARPHONES
                 </h2>
                 <Link to={`/productdetail/${yx1}`}>
-                  <button className="bg-transparent border border-dark-900 text-dark-900 text-center font-manrope font-semibold py-4 px-8 mt-6 rounded text-sm tracking-[1px] cursor-pointer ">
+                  <button className="bg-transparent hover:bg-dark-900  focus:text-white transition focus:bg-dark-900 hover:text-white border border-dark-900 text-dark-900 text-center font-manrope font-semibold py-4 px-8 mt-6 rounded text-sm tracking-[1px] cursor-pointer ">
                     SEE PRODUCT
                   </button>
                 </Link>
