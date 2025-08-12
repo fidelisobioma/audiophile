@@ -127,7 +127,7 @@ function Productdetail() {
                         <div className="shrink-0">
                           <button
                             onClick={() => addToCart(product)}
-                            className=" bg-brown text-white font-manrope font-bold text-sm p-4 rounded tracking-[1px] cursor-pointer"
+                            className=" bg-brown text-white hover:bg-light-brown focus:bg-light-brown transition font-manrope font-bold text-sm p-4 rounded tracking-[1px] cursor-pointer"
                           >
                             ADD TO CART
                           </button>
@@ -192,13 +192,13 @@ function Productdetail() {
                     <h2 className="font-manrope font-bold leading-9 text-2xl md:text-3xl tracking-[0.86px] text-center text-dark-900">
                       YOU MAY ALSO LIKE
                     </h2>
-                    <div className="mt-10 md:grid grid-cols-3 gap-3">
+                    <div className="mt-10 grid justify-center md:grid-cols-3 gap-3">
                       {product.others.map((other, index) => (
-                        <div key={index} className="text-center">
+                        <div key={index} className="text-center w-[300px]">
                           <img
                             src={other.image.mobile}
                             alt={other.name}
-                            className="rounded-lg md:hidden"
+                            className="rounded-lg md:hidden w-full"
                           />
                           <img
                             src={other.image.tablet}
@@ -215,7 +215,7 @@ function Productdetail() {
                           </h2>
                           <div>
                             <Link to={`/productdetail/${other.slug}`}>
-                              <button className="bg-brown text-white text-sm text-center font-manrope font-semibold py-4 px-7  rounded tracking-[1px] cursor-pointer mb-14">
+                              <button className="bg-brown text-white text-sm text-center hover:bg-light-brown focus:bg-light-brown transition font-manrope font-semibold py-4 px-7  rounded tracking-[1px] cursor-pointer mb-14">
                                 SEE PRODUCT
                               </button>
                             </Link>

@@ -36,72 +36,77 @@ function Navbar() {
   };
 
   return (
-    <div className=" bg-dark-900 ">
-      <nav className="fixed z-50 bg-dark-900 max-w-[80rem] px-16 xl:px-40 mx-auto hidden lg:flex flex-col justify-between w-full overflow-hidden  top-0 left-0 right-0  ">
-        <div className=" flex justify-between items-center flex-1 py-[2.87rem] ">
-          <div className="w-[143px] h-[25px]">
-            <Link to="/">
-              <img
-                src="/assets/shared/desktop/logo.svg"
-                alt="audiophile"
-                className="w-full"
-              />
-            </Link>
-          </div>
-          <ul className="flex items-center gap-[2.125rem]">
-            <li>
-              <NavLink
-                className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125rem] hover:text-brown focus:text-brown transition"
-                to="/"
-              >
-                HOME
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
-                to="/headphones/headphones"
-              >
-                HEADPHONES
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
-                to="/speakers/speakers"
-              >
-                SPEAKERS
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
-                to="/earphones/earphones"
-              >
-                EARPHONES
-              </NavLink>
-            </li>
-          </ul>
+    <div className=" bg-dark-900">
+      <nav className="fixed z-50 bg-dark-900 px-16 xl:px-40 hidden lg:block w-full overflow-hidden  top-0 left-0 right-0  ">
+        <div className="bg-dark-900 lg:flex flex-col justify-between max-w-[80rem] mx-auto">
+          <div className=" flex justify-between items-center flex-1 py-[2.87rem] ">
+            <div className="w-[143px] h-[25px]">
+              <Link to="/">
+                <img
+                  src="/assets/shared/desktop/logo.svg"
+                  alt="audiophile"
+                  className="w-full"
+                />
+              </Link>
+            </div>
+            <ul className="flex items-center gap-[2.125rem]">
+              <li>
+                <NavLink
+                  className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125rem] hover:text-brown focus:text-brown transition"
+                  to="/"
+                >
+                  HOME
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
+                  to="/headphones/headphones"
+                >
+                  HEADPHONES
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
+                  to="/speakers/speakers"
+                >
+                  SPEAKERS
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="text-white font-manrope font-bold text-[0.8125rem] leading-[1.5625] tracking-[0.125] hover:text-brown focus:text-brown transition"
+                  to="/earphones/earphones"
+                >
+                  EARPHONES
+                </NavLink>
+              </li>
+            </ul>
 
-          <div onClick={handleShowCart} className="relative p-2 cursor-pointer">
-            <span className="absolute bg-brown size-4 rounded-full top-0 right-0 text-white text-center text-sm leading-4">
-              {totalQuantity}
-            </span>
-            <button>
-              <img
-                src="\assets\shared\desktop\icon-cart.svg"
-                alt="cart"
-                className="w-[23px] h-[20px] cursor-pointer"
-              />
-            </button>
+            <div
+              onClick={handleShowCart}
+              className="relative p-2 cursor-pointer"
+            >
+              <span className="absolute bg-brown size-4 rounded-full top-0 right-0 text-white text-center text-sm leading-4">
+                {totalQuantity}
+              </span>
+              <button>
+                <img
+                  src="\assets\shared\desktop\icon-cart.svg"
+                  alt="cart"
+                  className="w-[23px] h-[20px] cursor-pointer"
+                />
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="bg-dark-900">
-          <img
-            src="/assets/shared/desktop/Rectangle.png"
-            alt="line"
-            className="w-full"
-          />
+          <div className="bg-dark-900">
+            <img
+              src="/assets/shared/desktop/Rectangle.png"
+              alt="line"
+              className="w-full"
+            />
+          </div>
         </div>
       </nav>
 
@@ -138,8 +143,8 @@ function Navbar() {
           </div>
         </div>
         {navbar && (
-          <div className="bg-[rgba(0,0,0,0.7)] z-10 fixed h-[calc(100vh-90px)] top-[90px p-6  left-0 right-0">
-            <div className="max-w-[80rem] mx-auto px-6  bg-white py-8 z-50 rounded-lg">
+          <div className="bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6  left-0 right-0">
+            <div className="max-w-[80rem] mx-auto px-6 bg-white pb-8 pt-12 z-50 rounded-lg">
               <div className="grid gap-12 md:grid-cols-3 md:gap-2.5 lg:gap-7.5 ">
                 <div className="bg-light-gray rounded-md ">
                   <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
@@ -238,7 +243,7 @@ function Navbar() {
       </nav>
 
       {overLay && (
-        <div className="fixed top-[90px] md:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] py-8 px-6  xl:px-40">
+        <div className="fixed top-[90px] lg:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] py-8 px-6  xl:px-40">
           {cart.length === 0 ? (
             <div className=" bg-white bg-whit w-full md:max-w-[23.56rem] p-8 rounded-lg grid justify-center text-center">
               <div>
@@ -251,12 +256,14 @@ function Navbar() {
               <p className="text-base font-medium font-manrope text-gray-500">
                 The cart is empty
               </p>
-              <button
-                onClick={handleShowCart}
-                className="bg-dark-900 text-center rounded p-3 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
-              >
-                START SHOPPING
-              </button>
+              <Link to="/">
+                <button
+                  onClick={handleShowCart}
+                  className="bg-dark-900 text-center rounded p-3 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
+                >
+                  START SHOPPING
+                </button>
+              </Link>
             </div>
           ) : (
             <div className="bg-white p-8 w-full md:max-w-[23.56rem] rounded-lg ">

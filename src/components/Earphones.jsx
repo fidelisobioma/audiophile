@@ -25,17 +25,19 @@ function Earphones() {
 
       <div className="bg-white ">
         <div className="max-w-[80rem] mx-auto px-6  xl:px-40">
-          {categories.map((product) => {
+          {categories.map((product, index) => {
             return (
               <div
                 key={product.id}
                 className="lg:grid grid-cols-2 gap-31 items-center mt-16"
               >
-                <div className="mx-auto lg:mx-0">
+                <div
+                  className={`${index % 2 !== 0 && "order-2"} mx-auto lg:mx-0 max-w-[43.06rem]`}
+                >
                   <img
                     src={product.image.desktop}
                     alt={product.name}
-                    className="rounded-lg"
+                    className="rounded-lg w-full"
                   />
                 </div>
 

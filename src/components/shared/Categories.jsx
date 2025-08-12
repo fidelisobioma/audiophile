@@ -4,9 +4,9 @@ function Categories() {
     <>
       <div className="bg-white ">
         <div className="max-w-[80rem] mx-auto px-6 xl:px-40">
-          <div className="grid md:grid-cols-3 md:gap-2.5 lg:gap-7.5 mb-30">
-            <div className="bg-light-gray mt-16 lg:mt-32 rounded-md">
-              <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
+          <div className="grid justify-center md:grid-cols-3 md:gap-2.5 lg:gap-7.5 mb-30">
+            <div className="bg-light-gray mt-16 lg:mt-32 w-[300px] md:w-auto rounded-md">
+              <div className="w-[5.00rem] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
                 <img
                   src="\assets\shared\desktop\image-category-thumbnail-headphones.png"
                   alt="headphone"
@@ -32,8 +32,8 @@ function Categories() {
               </div>
             </div>
 
-            <div className="bg-light-gray mt-16 lg:mt-32 rounded-md">
-              <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
+            <div className="bg-light-gray mt-16 lg:mt-32  w-[300px] md:w-auto rounded-md">
+              <div className="w-[5.00rem] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
                 <img
                   src="\assets\shared\desktop\image-category-thumbnail-speakers.png"
                   alt="speaker"
@@ -58,8 +58,8 @@ function Categories() {
                 </div>
               </div>
             </div>
-            <div className="bg-light-gray mt-16 lg:mt-32 rounded-md">
-              <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6 lg:-mt-8 mx-auto ">
+            <div className="bg-light-gray mt-16 lg:mt-32  w-[300px] md:w-auto rounded-md">
+              <div className="w-[5.00rem] md:w-[103px] lg:w-[122px] -mt-6 lg:-mt-8 mx-auto ">
                 <img
                   src="\assets\shared\desktop\image-category-thumbnail-earphones.png"
                   alt="earphones"

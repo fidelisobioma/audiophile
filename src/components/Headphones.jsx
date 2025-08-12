@@ -28,15 +28,15 @@ function Headphones() {
             return (
               <div
                 key={product.id}
-                className="lg:grid grid-cols-2 gap-31 items-center mt-16"
+                className="lg:grid grid-cols-2 gap-31 items-center mt-16 "
               >
                 <div
-                  className={`${index % 2 !== 0 && "order-2"} mx-auto lg:mx-0`}
+                  className={`${index % 2 !== 0 && "order-2"} mx-auto lg:mx-0 max-w-[43.06rem]`}
                 >
                   <img
                     src={product.image.desktop}
                     alt={product.name}
-                    className="rounded-lg"
+                    className="rounded-lg w-full"
                   />
                 </div>
 

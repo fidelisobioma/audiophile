@@ -50,7 +50,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="lg:flex justify-between items-center">
+          <div className="md:flex justify-between items-center">
             <div className="xl:max-w-[500px] lg:max-w-[398px]">
               <p className="text-white text-base leading-[1.5625rem] tracking-0 text-center md:text-left">
                 Audiophile is an all in one stop to fulfill your audio needs.
@@ -62,7 +62,7 @@ function Footer() {
                 Copyright 2021. All Rights Reserved
               </p>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-4 mt-12 lg:mt-0">
+            <div className="flex items-center justify-center md:justify-start gap-4 mt-12 lg:mt-0 md:mt-32">
               <div className="w-[24px] h-[24px]  cursor-pointer">
                 <img
                   src="\assets\shared\desktop\icon-facebook.svg"
