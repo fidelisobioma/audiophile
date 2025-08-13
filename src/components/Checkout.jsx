@@ -138,12 +138,12 @@ function Checkout() {
                 </div>
               </div>
               <Link to="/" onClick={() => setCart([])}>
-                <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-6 mt-6 tracking-[1px] rounded cursor-pointer">
+                <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-5 mt-6 tracking-[1px] rounded cursor-pointer">
                   BACK TO HOME
                 </button>
               </Link>
             </div>
-            <div className="h-6 relative"></div>
+            <div className="h-20 relative"></div>
           </div>
 
           <button

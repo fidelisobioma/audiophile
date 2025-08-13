@@ -263,7 +263,7 @@ function Navbar() {
             <Link to="/">
               <button
                 onClick={handleShowCart}
-                className="bg-dark-900 text-center rounded py-6 px-8 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
+                className="bg-dark-900 text-center rounded py-5 px-8 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
               >
                 START SHOPPING
               </button>
@@ -336,14 +336,14 @@ function Navbar() {
             <Link to="/checkout" className="">
               <button
                 onClick={handleShowCart}
-                className="bg-brown text-center rounded w-full py-6 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
+                className="bg-brown text-center rounded w-full py-5 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
               >
                 CHECKOUT
               </button>
             </Link>
           </div>
         )}
-        <div className=" h-6 relative"></div>
+        <div className=" h-20 relative"></div>
       </div>
     </div>
   );
