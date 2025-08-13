@@ -121,7 +121,7 @@ function Navbar() {
               </NavLink>
             </div>
             <div onClick={handleShowCart} className="relative p-2">
-              <span className="absolute bg-brown size-4 rounded-full top-0 right-0 text-white text-center text-sm leading-4">
+              <span className="absolute flex  justify-center items-center p-2 bg-brown size-[0.81em] rounded-full top-0 right-0 text-white text-center text-[0.81rem] leading-4">
                 {totalQuantity}
               </span>
               <button>
@@ -143,7 +143,7 @@ function Navbar() {
         </div>
 
         <div
-          className={`bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6  left-0 right-0 transform transition-all duration-300 ease-out origin-left
+          className={`bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6 left-0 right-0 transform transition-all duration-300 ease-out origin-left
             ${navbar ? "translate-x-0" : "translate-x-[100%] pointer-events-none"}
           `}
         >
@@ -245,7 +245,7 @@ function Navbar() {
       </nav>
 
       <div
-        className={`fixed top-[90px] lg:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] py-8 px-6  xl:px-40 transform transition-all duration-300 ease-out origin-center
+        className={`fixed top-[90px] lg:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] pt-6 px-6  xl:px-40 transform transition-all duration-300 ease-out origin-center
            ${overLay ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}
       >
         {cart.length === 0 ? (
@@ -263,7 +263,7 @@ function Navbar() {
             <Link to="/">
               <button
                 onClick={handleShowCart}
-                className="bg-dark-900 text-center rounded p-3 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
+                className="bg-dark-900 text-center rounded py-6 px-8 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
               >
                 START SHOPPING
               </button>
@@ -336,13 +336,14 @@ function Navbar() {
             <Link to="/checkout" className="">
               <button
                 onClick={handleShowCart}
-                className="bg-brown text-center rounded w-full p-3 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
+                className="bg-brown text-center rounded w-full py-6 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
               >
                 CHECKOUT
               </button>
             </Link>
           </div>
         )}
+        <div className=" h-6 relative"></div>
       </div>
     </div>
   );

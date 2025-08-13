@@ -55,15 +55,15 @@ function Checkout() {
   };
   if (loading) return <Loading />;
   return (
-    <div className="relative ">
+    <div className="relative">
       <Navbar />
       <div className="bg-[#f2f2f2] mt-[90px] lg:mt-[117px]">
         <div className="max-w-[80rem] mx-auto px-6 xl:px-40 bg-[#f2f2f2] pb-8 ">
           <div
-            className={` bg-[rgba(0,0,0,0.5)] z-50 absolute grid items-start left-0 right-0 -top-20 h-full px-6 transform transition-all duration-300 ease-out origin-center 
+            className={` bg-[rgba(0,0,0,0.5)] z-50 fixed overflow-auto grid items-start left-0 right-0 top-0 h-[100vh] pt-6 px-6 transform transition-all duration-300 ease-out origin-center 
               ${confirm ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}
           >
-            <div className="bg-white rounded-lg h-fit max-w-[600px] p-8 mx-auto overflow-auto">
+            <div className="bg-white rounded-lg h-fit max-w-[600px] p-8 relative mx-auto ">
               <div className="size-16 mb-6">
                 <img
                   src="\assets\checkout\icon-order-confirmation.svg"
@@ -104,22 +104,26 @@ function Checkout() {
                       </div>
                     );
                   })}
-                  <hr className="text-[#979797]" />
-                  {more && (
-                    <button
-                      className="font-manrope font-bold text-sm text-gray-500 tracking-tight mx-auto block mt-3 cursor-pointer"
-                      onClick={handleAllproduct}
-                    >
-                      View less
-                    </button>
-                  )}
-                  {less && (
-                    <button
-                      onClick={handleLessproduct}
-                      className="font-manrope font-bold text-sm text-gray-500 tracking-tight  mx-auto block mt-3 cursor-pointer"
-                    >
-                      {` and ${cart.length - 1} other item(s)`}
-                    </button>
+                  {cart.length > 1 && (
+                    <div>
+                      <hr className="text-[#979797]" />
+                      {more && (
+                        <button
+                          className="font-manrope font-bold text-sm text-gray-500 tracking-tight mx-auto block mt-3 cursor-pointer"
+                          onClick={handleAllproduct}
+                        >
+                          View less
+                        </button>
+                      )}
+                      {less && (
+                        <button
+                          onClick={handleLessproduct}
+                          className="font-manrope font-bold text-sm text-gray-500 tracking-tight  mx-auto block mt-3 cursor-pointer"
+                        >
+                          {` and ${cart.length - 1} other item(s)`}
+                        </button>
+                      )}
+                    </div>
                   )}
                 </div>
                 <div className="bg-dark-900 p-6 grid items-end">
@@ -134,11 +138,12 @@ function Checkout() {
                 </div>
               </div>
               <Link to="/" onClick={() => setCart([])}>
-                <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] rounded cursor-pointer">
+                <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-6 mt-6 tracking-[1px] rounded cursor-pointer">
                   BACK TO HOME
                 </button>
               </Link>
             </div>
+            <div className="h-6 relative"></div>
           </div>
 
           <button
@@ -535,13 +540,13 @@ function Checkout() {
                     <input
                       type="submit"
                       value=" CONTINUE & PAY"
-                      className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-4 px-9 tracking-[1px] rounded cursor-pointer"
+                      className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-6 px-9 tracking-[1px] rounded cursor-pointer"
                     />
                   </div>
                 ) : (
                   <div>
                     <Link to="/">
-                      <button className="bg-brown w-full text-white text-center font-manrope font-semibold text-[13px] py-[0.9rem] px-[1.9rem] mt-7 rounded  tracking-[1px] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition">
+                      <button className="bg-brown w-full text-white text-center font-manrope font-semibold text-[13px] py-6 px-[1.9rem] mt-7 rounded  tracking-[1px] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition">
                         Continue SHOPPING
                       </button>
                     </Link>
