@@ -9,9 +9,6 @@ function Checkout() {
   const navigate = useNavigate();
   const [confirm, setConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
-  // const handleclickConfirm = () => {
-  //   setConfirm(!confirm);
-  // };
 
   const { cart, setCart, totalPrice } = useOutletContext();
 
@@ -46,7 +43,7 @@ function Checkout() {
     formState: { errors },
   } = useForm({ defaultValues: { name: "", email: "", phone: "" } });
   const onSubmit = async (data) => {
-    // console.log(data);
+    console.log(data);
     const valid = await trigger();
     setLoading(true);
     setTimeout(() => {
@@ -62,86 +59,87 @@ function Checkout() {
       <Navbar />
       <div className="bg-[#f2f2f2] mt-[90px] lg:mt-[117px]">
         <div className="max-w-[80rem] mx-auto px-6 xl:px-40 bg-[#f2f2f2] pb-8 ">
-          {confirm && (
-            <div className="bg-[rgba(0,0,0,0.5)] z-50 absolute grid items-start left-0 right-0 -top-20 h-full px-6 ">
-              <div className="bg-white rounded-lg h-fit max-w-[600px] p-8 mx-auto overflow-auto">
-                <div className="size-16 mb-6">
-                  <img
-                    src="\assets\checkout\icon-order-confirmation.svg"
-                    alt="confirmerd"
-                    className="w-full"
-                  />
-                </div>
-                <h2 className="font-manrope font-bold text-2xl text-dark-900 leading-7 tracking-[0.26px]">
-                  THANK YOU FOR YOUR ORDER
-                </h2>
-                <p className="font-manrope text-gray-600 text-sm leading-6 my-6">
-                  You will receive an email confirmation shortly.
-                </p>
-                <div className="rounded-lg overflow-hidden mt-6 md:grid grid-cols-2 ">
-                  <div className="bg-light-gray p-6 ">
-                    {lessProduct.map((items) => {
-                      return (
-                        <div key={items.id} className="flex gap-4  mt-8 mb-6">
-                          <div className="w-[64px] h-[64px]">
-                            <img
-                              src={items.image.mobile}
-                              alt={items.name}
-                              className="rounded-lg w-full"
-                            />
-                          </div>
+          <div
+            className={` bg-[rgba(0,0,0,0.5)] z-50 absolute grid items-start left-0 right-0 -top-20 h-full px-6 transform transition-all duration-300 ease-out origin-center 
+              ${confirm ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}
+          >
+            <div className="bg-white rounded-lg h-fit max-w-[600px] p-8 mx-auto overflow-auto">
+              <div className="size-16 mb-6">
+                <img
+                  src="\assets\checkout\icon-order-confirmation.svg"
+                  alt="confirmerd"
+                  className="w-full"
+                />
+              </div>
+              <h2 className="font-manrope font-bold text-2xl text-dark-900 leading-7 tracking-[0.26px]">
+                THANK YOU FOR YOUR ORDER
+              </h2>
+              <p className="font-manrope text-gray-600 text-sm leading-6 my-6">
+                You will receive an email confirmation shortly.
+              </p>
+              <div className="rounded-lg overflow-hidden mt-6 md:grid grid-cols-2 ">
+                <div className="bg-light-gray p-6 ">
+                  {lessProduct.map((items) => {
+                    return (
+                      <div key={items.id} className="flex gap-4  mt-8 mb-6">
+                        <div className="w-[64px] h-[64px]">
+                          <img
+                            src={items.image.mobile}
+                            alt={items.name}
+                            className="rounded-lg w-full"
+                          />
+                        </div>
 
-                          <div className="flex-1">
-                            <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
-                              {items.name}
-                            </h2>
-                            <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
-                              ${items.price}
-                            </p>
-                          </div>
-                          <p className="font-manrope font-bold text-sm text-gray-500">
-                            x{items.quantity}
+                        <div className="flex-1">
+                          <h2 className="font-manrope font-bold text-sm text-dark-900 leading-6">
+                            {items.name}
+                          </h2>
+                          <p className="font-manrope font-normal text-gray-500 text-sm leading-6">
+                            ${items.price}
                           </p>
                         </div>
-                      );
-                    })}
-                    <hr className="text-[#979797]" />
-                    {more && (
-                      <button
-                        className="font-manrope font-bold text-sm text-gray-500 tracking-tight mx-auto block mt-3 cursor-pointer"
-                        onClick={handleAllproduct}
-                      >
-                        View less
-                      </button>
-                    )}
-                    {less && (
-                      <button
-                        onClick={handleLessproduct}
-                        className="font-manrope font-bold text-sm text-gray-500 tracking-tight  mx-auto block mt-3 cursor-pointer"
-                      >
-                        {` and ${cart.length - 1} other item(s)`}
-                      </button>
-                    )}
-                  </div>
-                  <div className="bg-dark-900 p-6 grid items-end">
-                    <div>
-                      <h3 className="font-manrope text-sm text-light-gray">
-                        GRAND TOTAL
-                      </h3>
-                      <h3 className="text-white font-manrope font-bold text-lg mt-2">
-                        $ {(shippingFee + totalPrice).toLocaleString()}
-                      </h3>
-                    </div>
+                        <p className="font-manrope font-bold text-sm text-gray-500">
+                          x{items.quantity}
+                        </p>
+                      </div>
+                    );
+                  })}
+                  <hr className="text-[#979797]" />
+                  {more && (
+                    <button
+                      className="font-manrope font-bold text-sm text-gray-500 tracking-tight mx-auto block mt-3 cursor-pointer"
+                      onClick={handleAllproduct}
+                    >
+                      View less
+                    </button>
+                  )}
+                  {less && (
+                    <button
+                      onClick={handleLessproduct}
+                      className="font-manrope font-bold text-sm text-gray-500 tracking-tight  mx-auto block mt-3 cursor-pointer"
+                    >
+                      {` and ${cart.length - 1} other item(s)`}
+                    </button>
+                  )}
+                </div>
+                <div className="bg-dark-900 p-6 grid items-end">
+                  <div>
+                    <h3 className="font-manrope text-sm text-light-gray">
+                      GRAND TOTAL
+                    </h3>
+                    <h3 className="text-white font-manrope font-bold text-lg mt-2">
+                      $ {(shippingFee + totalPrice).toLocaleString()}
+                    </h3>
                   </div>
                 </div>
-                <Link to="/" onClick={() => setCart([])}>
-                  <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] rounded cursor-pointer">
-                    BACK TO HOME
-                  </button>
-                </Link>
               </div>
+              <Link to="/" onClick={() => setCart([])}>
+                <button className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope font-semibold text-sm py-4 mt-6 tracking-[1px] rounded cursor-pointer">
+                  BACK TO HOME
+                </button>
+              </Link>
             </div>
-          )}
+          </div>
 
           <button
             onClick={() => navigate(-1)}

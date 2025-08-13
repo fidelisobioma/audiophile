@@ -9,7 +9,7 @@ import Navbar from "./shared/Navbar";
 import Categories from "./shared/Categories";
 import Audiophile from "./shared/Audiophile";
 import Footer from "./shared/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Productdetail() {
   const params = useParams();
@@ -20,16 +20,22 @@ function Productdetail() {
 
   const productDetail = data.filter((productName) => productName.slug === slug);
 
-  const [product, setProduct] = useState(productDetail);
+  const [products, setProducts] = useState(productDetail);
+
+  useEffect(() => {
+    const result = data.filter((productName) => productName.slug === slug);
+    setProducts(result);
+  }, [slug]);
+
   const increase = (id) => {
-    setProduct((prevP) =>
+    setProducts((prevP) =>
       prevP.map((items) =>
         items.id === id ? { ...items, quantity: items.quantity + 1 } : items,
       ),
     );
   };
   const decrease = (id) => {
-    setProduct((prevP) =>
+    setProducts((prevP) =>
       prevP.map((items) =>
         items.id === id
           ? { ...items, quantity: Math.max(1, items.quantity - 1) }
@@ -54,7 +60,7 @@ function Productdetail() {
       }
     });
 
-    setProduct((prev) =>
+    setProducts((prev) =>
       prev.map((items) =>
         items.id === newProduct.id ? { ...items, quantity: 1 } : items,
       ),
@@ -72,7 +78,7 @@ function Productdetail() {
             Go Back
           </button>
           <div>
-            {product.map((product) => {
+            {products.map((product) => {
               return (
                 <div key={product.id}>
                   <div className="mt-6 md:grid items-center grid-cols-2 gap-17 lg:gap-31">

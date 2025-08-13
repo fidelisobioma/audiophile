@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, NavLink, useOutletContext } from "react-router-dom";
 function Navbar() {
   const { cart, setCart, totalQuantity, totalPrice } = useOutletContext();
-
   //Add mobile navbar
   const [navbar, setNavbar] = useState(false);
   const handleclickNavbar = () => {
@@ -142,205 +141,209 @@ function Navbar() {
             />
           </div>
         </div>
-        {navbar && (
-          <div className="bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6  left-0 right-0">
-            <div className="max-w-[80rem] mx-auto px-6 bg-white pb-8 pt-12 z-50 rounded-lg">
-              <div className="grid gap-12 md:grid-cols-3 md:gap-2.5 lg:gap-7.5 ">
-                <div className="bg-light-gray rounded-md ">
-                  <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
-                    <img
-                      src="\assets\shared\desktop\image-category-thumbnail-headphones.png"
-                      alt="headphone"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="text-center mt-8 md:mt-1">
-                    <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
-                      HEADPHONES
-                    </h3>
-                    <div>
-                      <NavLink
-                        className="space-x-1 inline-flex justify-center items-center my-4"
-                        to="/headphones/headphones"
-                      >
-                        <span className="font-manrope font-bold text-sm text-gray-600">
-                          SHOP
-                        </span>
-                        <img
-                          src="\assets\shared\desktop\icon-arrow-right.svg"
-                          alt="arrow right"
-                          className=""
-                        />
-                      </NavLink>
-                    </div>
+
+        <div
+          className={`bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6  left-0 right-0 transform transition-all duration-300 ease-out origin-left
+            ${navbar ? "translate-x-0" : "translate-x-100 pointer-events-none"}
+          `}
+        >
+          <div className="max-w-[80rem] mx-auto px-6 bg-white pb-8 pt-12 z-50 rounded-lg">
+            <div className="grid gap-12 md:grid-cols-3 md:gap-2.5 lg:gap-7.5 ">
+              <div className="bg-light-gray rounded-md ">
+                <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
+                  <img
+                    src="\assets\shared\desktop\image-category-thumbnail-headphones.png"
+                    alt="headphone"
+                    className="w-full"
+                  />
+                </div>
+                <div className="text-center mt-8 md:mt-1">
+                  <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
+                    HEADPHONES
+                  </h3>
+                  <div>
+                    <NavLink
+                      className="space-x-1 inline-flex justify-center items-center my-4"
+                      to="/headphones/headphones"
+                    >
+                      <span className="font-manrope font-bold text-sm text-gray-600">
+                        SHOP
+                      </span>
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
+                    </NavLink>
                   </div>
                 </div>
+              </div>
 
-                <div className="bg-light-gray rounded-md ">
-                  <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
-                    <img
-                      src="\assets\shared\desktop\image-category-thumbnail-speakers.png"
-                      alt="speaker"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="text-center mt-6 md:mt-1">
-                    <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
-                      SPEAKERS
-                    </h3>
-                    <div>
-                      <NavLink
-                        className="space-x-1 inline-flex justify-center items-center my-4"
-                        to="/speakers/speakers"
-                      >
-                        <span className="font-manrope font-bold text-sm text-gray-600">
-                          SHOP
-                        </span>
-                        <img
-                          src="\assets\shared\desktop\icon-arrow-right.svg"
-                          alt="arrow right"
-                          className=""
-                        />
-                      </NavLink>
-                    </div>
+              <div className="bg-light-gray rounded-md ">
+                <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6  lg:-mt-8 mx-auto ">
+                  <img
+                    src="\assets\shared\desktop\image-category-thumbnail-speakers.png"
+                    alt="speaker"
+                    className="w-full"
+                  />
+                </div>
+                <div className="text-center mt-6 md:mt-1">
+                  <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
+                    SPEAKERS
+                  </h3>
+                  <div>
+                    <NavLink
+                      className="space-x-1 inline-flex justify-center items-center my-4"
+                      to="/speakers/speakers"
+                    >
+                      <span className="font-manrope font-bold text-sm text-gray-600">
+                        SHOP
+                      </span>
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
+                    </NavLink>
                   </div>
                 </div>
+              </div>
 
-                <div className="bg-light-gray rounded-md ">
-                  <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6 lg:-mt-8 mx-auto ">
-                    <img
-                      src="\assets\shared\desktop\image-category-thumbnail-earphones.png"
-                      alt="earphones"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="text-center mt-8 md:mt-1">
-                    <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
-                      EARPHONES
-                    </h3>
+              <div className="bg-light-gray rounded-md ">
+                <div className="w-[79px] md:w-[103px] lg:w-[122px] -mt-6 lg:-mt-8 mx-auto ">
+                  <img
+                    src="\assets\shared\desktop\image-category-thumbnail-earphones.png"
+                    alt="earphones"
+                    className="w-full"
+                  />
+                </div>
+                <div className="text-center mt-8 md:mt-1">
+                  <h3 className="font-manrope font-bold text-base lg:text-lg text-dark-900 tracking-[1.2px]">
+                    EARPHONES
+                  </h3>
 
-                    <div>
-                      <NavLink
-                        className="space-x-1 inline-flex justify-center items-center my-4"
-                        to="/earphones/earphones"
-                      >
-                        <span className="font-manrope font-bold text-sm text-gray-600">
-                          SHOP
-                        </span>
-                        <img
-                          src="\assets\shared\desktop\icon-arrow-right.svg"
-                          alt="arrow right"
-                          className=""
-                        />
-                      </NavLink>
-                    </div>
+                  <div>
+                    <NavLink
+                      className="space-x-1 inline-flex justify-center items-center my-4"
+                      to="/earphones/earphones"
+                    >
+                      <span className="font-manrope font-bold text-sm text-gray-600">
+                        SHOP
+                      </span>
+                      <img
+                        src="\assets\shared\desktop\icon-arrow-right.svg"
+                        alt="arrow right"
+                        className=""
+                      />
+                    </NavLink>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
-      {overLay && (
-        <div className="fixed top-[90px] lg:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] py-8 px-6  xl:px-40">
-          {cart.length === 0 ? (
-            <div className=" bg-white bg-whit w-full md:max-w-[23.56rem] p-8 rounded-lg grid justify-center text-center">
-              <div>
-                <img
-                  src="/assets/shared/desktop/empty-removebg-preview.png"
-                  alt="empty cart"
-                  className="w-full"
-                />
-              </div>
-              <p className="text-base font-medium font-manrope text-gray-500">
-                The cart is empty
-              </p>
-              <Link to="/">
-                <button
-                  onClick={handleShowCart}
-                  className="bg-dark-900 text-center rounded p-3 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
-                >
-                  START SHOPPING
-                </button>
-              </Link>
+      <div
+        className={`fixed top-[90px] lg:top-[117px] justify-center md:justify-items-end z-10 h-[calc(100vh-90px)] md:h-[calc(100vh-117px)] overflow-y-auto w-full bg-[rgba(0,0,0,0.7)] py-8 px-6  xl:px-40 transform transition-all duration-300 ease-out origin-center
+           ${overLay ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"}`}
+      >
+        {cart.length === 0 ? (
+          <div className=" bg-white bg-whit w-full md:max-w-[23.56rem] p-8 rounded-lg grid justify-center text-center">
+            <div>
+              <img
+                src="/assets/shared/desktop/empty-removebg-preview.png"
+                alt="empty cart"
+                className="w-full"
+              />
             </div>
-          ) : (
-            <div className="bg-white p-8 w-full md:max-w-[23.56rem] rounded-lg ">
-              <div className="flex justify-between items-center mb-8">
-                <h3 className="text-lg text-dark-900 font-bold font-manrope tracking-[0.06rem]">
-                  Cart({totalQuantity})
-                </h3>
-                <button
-                  onClick={handleRemoveAll}
-                  className="font-manrope font-medium text-sm text-gray-500 underline cursor-pointer hover:text-brown"
-                >
-                  Remove all
-                </button>
-              </div>
-              <div>
-                {cart.map((item) => (
-                  <div key={item.id} className="flex items-start mt-6">
-                    <div className="size-16">
-                      <img
-                        src={item.image.mobile}
-                        alt={item.name}
-                        className="w-full rounded-lg"
-                      />
-                    </div>
-                    <div className="flex-1 ml-4">
-                      <h3 className="font-bold font-manrope text-base text-dark-900 leading-[1.56rem]">
-                        {item.name.split(" ").slice(0, -1).join(" ")}
-                      </h3>
-                      <p className="font-manrope  font-bold text-sm text-gray-500 leading-[1.56rem]">
-                        ${item.price.toLocaleString()}
-                      </p>
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-center gap-4  bg-light-gray font-manrope font-bold text-sm py-2 px-4  rounded tracking-[1px] ">
-                        <button
-                          onClick={() => changeQty(item.id, -1)}
-                          className="cursor-pointer hover:text-brown"
-                        >
-                          -
-                        </button>
-                        <p>{item.quantity}</p>
-                        <button
-                          onClick={() => changeQty(item.id, 1)}
-                          className="cursor-pointer hover:text-brown"
-                        >
-                          +
-                        </button>
-                      </div>
+            <p className="text-base font-medium font-manrope text-gray-500">
+              The cart is empty
+            </p>
+            <Link to="/">
+              <button
+                onClick={handleShowCart}
+                className="bg-dark-900 text-center rounded p-3 mt-6 hover:bg-[#4c4c4c] focus:bg-[#4c4c4c] transition cursor-pointer text-white text-sm font-bold font-manrope tracking-[0.06rem]"
+              >
+                START SHOPPING
+              </button>
+            </Link>
+          </div>
+        ) : (
+          <div className="bg-white p-8 w-full md:max-w-[23.56rem] rounded-lg ">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="text-lg text-dark-900 font-bold font-manrope tracking-[0.06rem]">
+                Cart({totalQuantity})
+              </h3>
+              <button
+                onClick={handleRemoveAll}
+                className="font-manrope font-medium text-sm text-gray-500 underline cursor-pointer hover:text-brown"
+              >
+                Remove all
+              </button>
+            </div>
+            <div>
+              {cart.map((item) => (
+                <div key={item.id} className="flex items-start mt-6">
+                  <div className="size-16">
+                    <img
+                      src={item.image.mobile}
+                      alt={item.name}
+                      className="w-full rounded-lg"
+                    />
+                  </div>
+                  <div className="flex-1 ml-4">
+                    <h3 className="font-bold font-manrope text-base text-dark-900 leading-[1.56rem]">
+                      {item.name.split(" ").slice(0, -1).join(" ")}
+                    </h3>
+                    <p className="font-manrope  font-bold text-sm text-gray-500 leading-[1.56rem]">
+                      ${item.price.toLocaleString()}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-center gap-4  bg-light-gray font-manrope font-bold text-sm py-2 px-4  rounded tracking-[1px] ">
+                      <button
+                        onClick={() => changeQty(item.id, -1)}
+                        className="cursor-pointer hover:text-brown"
+                      >
+                        -
+                      </button>
+                      <p>{item.quantity}</p>
+                      <button
+                        onClick={() => changeQty(item.id, 1)}
+                        className="cursor-pointer hover:text-brown"
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
-
-              <div className="flex justify-between items-center mt-8">
-                <div>
-                  <p className="font-manrope font-medium  text-sm leading-[1.56rem] tracking-[0.06rem] text-gray-500 ">
-                    TOTAL
-                  </p>
                 </div>
-                <div>
-                  <h3 className=" text-dark-900  font-manrope font-bold text-lg ">
-                    ${totalPrice.toLocaleString()}
-                  </h3>
-                </div>
-              </div>
-              <Link to="/checkout" className="">
-                <button
-                  onClick={handleShowCart}
-                  className="bg-brown text-center rounded w-full p-3 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
-                >
-                  CHECKOUT
-                </button>
-              </Link>
+              ))}
             </div>
-          )}
-        </div>
-      )}
+
+            <div className="flex justify-between items-center mt-8">
+              <div>
+                <p className="font-manrope font-medium  text-sm leading-[1.56rem] tracking-[0.06rem] text-gray-500 ">
+                  TOTAL
+                </p>
+              </div>
+              <div>
+                <h3 className=" text-dark-900  font-manrope font-bold text-lg ">
+                  ${totalPrice.toLocaleString()}
+                </h3>
+              </div>
+            </div>
+            <Link to="/checkout" className="">
+              <button
+                onClick={handleShowCart}
+                className="bg-brown text-center rounded w-full p-3 mt-6 text-white text-sm font-bold font-manrope tracking-[0.06rem] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition"
+              >
+                CHECKOUT
+              </button>
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
