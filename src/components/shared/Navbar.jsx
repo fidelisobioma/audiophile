@@ -144,7 +144,7 @@ function Navbar() {
 
         <div
           className={`bg-[rgba(0,0,0,0.7)] z-10 fixed top-[90px] h-[calc(100vh-90px)] p-6  left-0 right-0 transform transition-all duration-300 ease-out origin-left
-            ${navbar ? "translate-x-0" : "translate-x-100 pointer-events-none"}
+            ${navbar ? "translate-x-0" : "translate-x-[100%] pointer-events-none"}
           `}
         >
           <div className="max-w-[80rem] mx-auto px-6 bg-white pb-8 pt-12 z-50 rounded-lg">
