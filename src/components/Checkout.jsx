@@ -540,13 +540,13 @@ function Checkout() {
                     <input
                       type="submit"
                       value=" CONTINUE & PAY"
-                      className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-6 px-9 tracking-[1px] rounded cursor-pointer"
+                      className="w-full hover:bg-light-brown focus:bg-light-brown transition bg-brown text-white text-center font-manrope text-sm font-semibold py-5 px-9 tracking-[1px] rounded cursor-pointer"
                     />
                   </div>
                 ) : (
                   <div>
                     <Link to="/">
-                      <button className="bg-brown w-full text-white text-center font-manrope font-semibold text-[13px] py-6 px-[1.9rem] mt-7 rounded  tracking-[1px] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition">
+                      <button className="bg-brown w-full text-white text-center font-manrope font-semibold text-[13px] py-5 px-[1.9rem] mt-7 rounded  tracking-[1px] cursor-pointer hover:bg-light-brown focus:bg-light-brown transition">
                         Continue SHOPPING
                       </button>
                     </Link>

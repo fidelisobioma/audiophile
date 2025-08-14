@@ -35,7 +35,7 @@ function Navbar() {
   };
 
   return (
-    <div className=" bg-dark-900">
+    <div className=" bg-dark-900 ">
       <nav className="fixed z-50 bg-dark-900 px-16 xl:px-40 hidden lg:block w-full overflow-hidden  top-0 left-0 right-0  ">
         <div className="bg-dark-900 lg:flex flex-col justify-between max-w-[80rem] mx-auto">
           <div className=" flex justify-between items-center flex-1 py-[2.87rem] ">

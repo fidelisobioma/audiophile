@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "./components/Scrolltop";
 
 function App() {
   // const location = useLocation();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    let savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+  //save cart to local storage
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   //total items in the cart
   const totalQuantity = cart.reduce((total, item) => {
     return total + item.quantity;
@@ -16,7 +24,7 @@ function App() {
   }, 0);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <ScrollToTop />
       <Outlet
         context={{
@@ -26,7 +34,7 @@ function App() {
           totalPrice,
         }}
       />
-    </>
+    </div>
   );
 }
 
