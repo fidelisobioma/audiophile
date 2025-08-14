@@ -9,7 +9,6 @@ import Speakers from "./components/Speakers.jsx";
 import Earphones from "./components/Earphones.jsx";
 import Productdetail from "./components/productdetail.jsx";
 import Checkout from "./components/Checkout.jsx";
-import Navbar from "./components/shared/Navbar.jsx";
 import Loading from "./components/Loading.jsx";
 
 // import Navbar from "./components/Navbar.jsx";
